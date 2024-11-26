@@ -1,2 +1,2 @@
-# Fsi.StateMachine
- State Machine package
+# fsi.statemachine
+ Basic statemachine pacakge

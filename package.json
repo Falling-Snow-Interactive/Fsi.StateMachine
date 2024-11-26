@@ -1,0 +1,20 @@
+{
+  "name": "com.fallingsnowinteractive.statemachine",
+  "version": "1.0.0",
+  "displayName": "FSI State Machine",
+  "description": "Package for state machine.",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "keywords": [
+    "Character",
+    "Animated",
+    "Mixamo"
+  ],
+  "author": {
+    "name": "Kira Dinan",
+    "email": "kiradinan.dev@gmail.com"
+  },
+  "hideInEditor": false,
+  "dependencies": {
+  }
+}
