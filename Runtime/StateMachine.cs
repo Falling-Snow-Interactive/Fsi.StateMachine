@@ -6,7 +6,7 @@ namespace Fsi.StateMachine
     public class StateMachine
     {
         private readonly Dictionary<IState, List<Transition>> transitions;
-
+        
         private IState CurrentState { get; set; }
 
         private readonly IState defaultState;
