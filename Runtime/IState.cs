@@ -1,3 +1,5 @@
+using System;
+
 namespace Fsi.StateMachine
 {
     public interface IState
