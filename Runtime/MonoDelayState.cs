@@ -10,17 +10,23 @@ namespace Fsi.StateMachine
         [SerializeField]
         private float timer;
         
-        public override void EnterState()
+        public override void OnEnter()
         {
             timer = delay;
+            Active = true;
         }
 
-        public override void UpdateState()
+        public override void OnUpdate()
         {
+            if (!Active)
+            {
+                return;
+            }
+            
             timer -= Time.deltaTime;
         }
 
-        public override void ExitState()
+        public override void OnExit()
         {
             timer = 0;
         }

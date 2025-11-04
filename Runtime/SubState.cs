@@ -5,19 +5,26 @@ namespace Fsi.StateMachine
     public class SubState : IState
     {
         public string Name { get; set; }
-        
-        public void EnterState()
+        public bool Active { get; set; }
+
+        public void OnEnter()
         {
+            Active = true;
             Enter?.Invoke();
         }
 
-        public void UpdateState()
+        public void OnUpdate()
         {
+            if (!Active)
+            {
+                return;
+            }
             Update?.Invoke();
         }
 
-        public void ExitState()
+        public void OnExit()
         {
+            Active = false;
             Exit?.Invoke();
         }
         

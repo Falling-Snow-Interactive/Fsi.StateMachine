@@ -1,4 +1,3 @@
-using System;
 
 namespace Fsi.StateMachine
 {
@@ -6,11 +5,15 @@ namespace Fsi.StateMachine
     {
         public string Name { get; }
         
-        public void EnterState();
-        public void UpdateState();
-        public void ExitState();
+        // State Active
+        public bool Active { get; set; }
         
-        // Transition
+        // Stat control
+        public void OnEnter();
+        public void OnUpdate();
+        public void OnExit();
+        
+        // Transition control
         public bool CanTransitionIn();
         public bool CanTransitionOut();
     }

@@ -1,13 +1,20 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Fsi.StateMachine
 {
+    [Serializable]
     public class StateMachine
     {
         private readonly Dictionary<IState, List<Transition>> transitions;
-        
-        private IState CurrentState { get; set; }
+
+        private IState state;
+        private IState State
+        {
+            get => state;
+            set => state = value;
+        }
 
         private readonly IState defaultState;
         
@@ -23,23 +30,23 @@ namespace Fsi.StateMachine
         {
             if (Debugging)
             {
-                Debug.Log(CurrentState != null
-                              ? $"{CurrentState.Name} -> {state.Name}"
+                Debug.Log(State != null
+                              ? $"{State.Name} -> {state.Name}"
                               : $"Starting State: {state.Name}");
             }
 
-            CurrentState?.ExitState();
-            CurrentState = state;
-            CurrentState?.EnterState();
+            State?.OnExit();
+            State = state;
+            State?.OnEnter();
         }
 
-        public void UpdateState()
+        public void Update()
         {
-            CurrentState?.UpdateState();
+            State?.OnUpdate();
 
-            if (CurrentState != null && transitions.ContainsKey(CurrentState))
+            if (State != null && transitions.ContainsKey(State))
             {
-                foreach (Transition transition in transitions[CurrentState])
+                foreach (Transition transition in transitions[State])
                 {
                     if (transition.CanTransition())
                     {

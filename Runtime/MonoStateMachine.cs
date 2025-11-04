@@ -33,10 +33,13 @@ namespace Fsi.StateMachine
 
         protected virtual void Start()
         {
-            Active |= startOn == StartState.Start;
-            if (Active)
+            if (!Active) // if it was started in awake we don't need to do it again
             {
-                stateMachine.Start();
+                Active |= startOn == StartState.Start;
+                if (Active)
+                {
+                    stateMachine.Start();
+                }
             }
         }
 
@@ -44,7 +47,7 @@ namespace Fsi.StateMachine
         {
             if (Active)
             {
-                stateMachine?.UpdateState();
+                stateMachine?.Update();
             }
         }
     }
