@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Fsi.StateMachine
+namespace Fsi.StateMachines
 {
     public class Transition
     {

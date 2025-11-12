@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Fsi.StateMachine
+namespace Fsi.StateMachines
 {
     public class MonoDelayState : MonoState
     {

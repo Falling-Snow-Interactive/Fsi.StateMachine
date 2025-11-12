@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Fsi.StateMachine
+namespace Fsi.StateMachines
 {
     [Serializable]
     public class StateMachine

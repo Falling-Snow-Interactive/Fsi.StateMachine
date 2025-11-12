@@ -1,6 +1,6 @@
 using System;
 
-namespace Fsi.StateMachine
+namespace Fsi.StateMachines
 {
     public class SubState : IState
     {

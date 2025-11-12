@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Fsi.StateMachine
+namespace Fsi.StateMachines
 {
     public abstract class MonoStateMachine : MonoBehaviour
     {
@@ -17,7 +17,7 @@ namespace Fsi.StateMachine
         private StartState startOn;
         
         [SerializeReference]
-        protected StateMachine stateMachine;
+        protected StateMachines.StateMachine stateMachine;
 
         protected abstract void BuildStateMap();
 
