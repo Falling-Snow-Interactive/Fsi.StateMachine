@@ -17,7 +17,7 @@ namespace Fsi.StateMachines
         private StartState startOn;
         
         [SerializeReference]
-        protected StateMachines.StateMachine stateMachine;
+        protected StateMachine stateMachine;
 
         protected abstract void BuildStateMap();
 
